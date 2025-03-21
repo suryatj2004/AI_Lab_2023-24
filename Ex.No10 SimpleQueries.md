@@ -25,6 +25,8 @@ Construct the FOL representation for the following sentences <br>
 
 ### Output:
 
+
+
 ### Task 2:
 Consider the following facts and represent them in predicate form: <br>              
 1.	Steve likes easy courses. <br> 
@@ -43,9 +45,23 @@ Consider the statement <br>
 “This is a crime for an American to sell weapons to hostile nations. The Nano , enemy of America has some missiles and its missiles were sold it by Colonal West who is an American” <br> 
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
-
-
+```
+crime(X):-american(X),
+    	  weapon(Y),
+    	  hostile(Z),
+          sells(X,Y,Z).
+sells(west,Y,nano):-missile(Y),
+    				owns(nano,Y).
+hostile(Z):-enemy(Z,D).
+weapon(Y):-missile(Y).
+american(west).
+enemy(nano,american).
+owns(nano,m1).
+missile(m1).
+```
 ### Output:
+
+![image](https://github.com/user-attachments/assets/5a05bb47-cee3-4fdf-95e5-42ee051e1911)
 
 ### Result:
 Thus the prolog programs were executed successfully and the answer of query was found.

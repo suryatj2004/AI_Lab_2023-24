@@ -15,29 +15,19 @@ To  write  a logic program  to solve Towers of Hanoi problem  using SWI-PROLOG.
 
 ### Program:
 ```
-hanoi(1, Source, Target, _, [move(Source, Target)]) :- !.
-hanoi(N, Source, Target, Auxiliary, Moves) :-
+move(1, X, Y, _) :-
+    format('Move disk from ~w to ~w~n', [X, Y]).
+move(N, X, Y, Z) :-
     N > 1,
     N1 is N - 1,
-    hanoi(N1, Source, Auxiliary, Target, Moves1),
-    hanoi(1, Source, Target, _, Move2),
-    hanoi(N1, Auxiliary, Target, Source, Moves3),
-    append(Moves1, Move2, TempMoves),
-    append(TempMoves, Moves3, Moves).
-
-print_moves([]).
-print_moves([move(From, To)|Rest]) :-
-    format('Move disk from ~w to ~w~n', [From, To]),
-    print_moves(Rest).
-
-solve_hanoi(N) :-
-    hanoi(N, left, right, center, Moves),
-    print_moves(Moves).
+    move(N1, X, Z, Y),
+    move(1, X, Y, _),
+    move(N1, Z, Y, X).
 
 ```
 ### Output:
 
-![image](https://github.com/user-attachments/assets/e3b1dc2c-52b9-4d14-85bd-3ea0a477f4f8)
+![image](https://github.com/user-attachments/assets/b6232674-9355-4a4d-8dc5-30196a98d488)
 
 ### Result:
 Thus the solution of Towers of Hanoi problem was found by logic programming.

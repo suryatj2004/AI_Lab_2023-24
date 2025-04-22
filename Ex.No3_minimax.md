@@ -1,6 +1,6 @@
 # Ex.No: 3  Implementation of Minimax Search
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 11/03/2025                                                                          
+### REGISTER NUMBER : 212222040168
 ### AIM: 
 Write a mini-max search algorithm to find the optimal value of MAX Player from the given graph.
 ### Algorithm:
@@ -15,20 +15,36 @@ Write a mini-max search algorithm to find the optimal value of MAX Player from t
 9. Stop the program. 
 
 ### Program:
+```
+def minimax(depth, index, is_max, values, alpha, beta):
+    if depth == 3:
+        return values[index]
 
+    func = max if is_max else min
+    best = float('-inf') if is_max else float('inf')
 
+    for i in range(2):
+        val = minimax(depth + 1, index * 2 + i, not is_max, values, alpha, beta)
+        best = func(best, val)
 
+        if is_max:
+            alpha = max(alpha, best)
+        else:
+            beta = min(beta, best)
 
+        if beta <= alpha:
+            break
 
+    return best
 
+values = [3, 5, 6, 9, 1, 2, 0, -1]
+print("The optimal value is:", minimax(0, 0, True, values, float('-inf'), float('inf')))
 
-
-
-
-
+```
 ### Output:
 
-
+![image](https://github.com/user-attachments/assets/16087860-79ce-4574-9b00-e1c58f49d3bc)
 
 ### Result:
 Thus the optimum value of max player was found using minimax search.
+

@@ -33,14 +33,12 @@ reset_state :-
     assert(at(banana, center)),
     assert(clear(box)).
 
-% GOTO Action
 goto(From, To) :-
     at(monkey, From),
     retract(at(monkey, From)),
     assert(at(monkey, To)),
     format('Monkey moves from ~w to ~w~n', [From, To]).
 
-% PUSH-BOX Action
 push_box(From, To) :-
     at(monkey, From),
     at(box, From),
@@ -50,7 +48,6 @@ push_box(From, To) :-
     assert(at(monkey, To)),
     format('Monkey pushes the box from ~w to ~w~n', [From, To]).
 
-% CLIMB Action
 climb :-
     at(monkey, Loc),
     at(box, Loc),
@@ -59,7 +56,6 @@ climb :-
     retract(clear(box)),
     writeln('Monkey climbs on the box').
 
-% GET-KNIFE Action
 get_knife :-
     at(monkey, Loc),
     at(knife, Loc),
@@ -67,7 +63,6 @@ get_knife :-
     retract(at(knife, Loc)),
     writeln('Monkey picks up the knife').
 
-% GRAB-BANANAS Action
 grab_bananas :-
     at(monkey, Loc),
     at(banana, Loc),
@@ -76,7 +71,6 @@ grab_bananas :-
     assert(hasbanana),
     writeln('Monkey grabs the bananas').
 
-% Plan Execution
 plan :-
     reset_state,
     goto(room1, room3),
@@ -89,7 +83,6 @@ plan :-
 ```
 ### Output:
 ![image](https://github.com/user-attachments/assets/58632492-d4ba-4f71-9a3c-1d7622152772)
-
 
 ### Result:
 Thus the plan was found for the initial and goal state of given problem.

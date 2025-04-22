@@ -1,6 +1,6 @@
 # Ex.No: 11  Planning –  Block World Problem 
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 22/04/2025                                                                      
+### REGISTER NUMBER : 212222040168
 ### AIM: 
 To find the sequence of plan for Block word problem using PDDL  
 ###  Algorithm:
@@ -16,20 +16,68 @@ Step 9 : Define a problem for block world problem.<br>
 Step 10 : Obtain the plan for given problem.<br> 
      
 ### Program:
+```
+ontable(a).
+ontable(b).
+ontable(c).
+clear(a).
+clear(b).
+clear(c).
+handempty.
+:- dynamic on/2.
+:- dynamic ontable/1.
+:- dynamic clear/1.
+:- dynamic handempty/0.
+:- dynamic holding/1.
+pickup(X) :-
+    ontable(X),
+    clear(X),
+    handempty,
+    retract(ontable(X)),
+    retract(clear(X)),
+    retract(handempty),
+    assert(holding(X)),
+    write('Picked up '), writeln(X).
 
+putdown(X) :-
+    holding(X),
+    retract(holding(X)),
+    assert(ontable(X)),
+    assert(clear(X)),
+    assert(handempty),
+    write('Put down '), writeln(X).
 
+unstack(X, Y) :-
+    on(X, Y),
+    clear(X),
+    handempty,
+    retract(on(X, Y)),
+    retract(clear(X)),
+    retract(handempty),
+    assert(holding(X)),
+    assert(clear(Y)),
+    write('Unstacked '), write(X), write(' from '), writeln(Y).
 
+stack(X, Y) :-
+    holding(X),
+    clear(Y),
+    retract(holding(X)),
+    retract(clear(Y)),
+    assert(on(X, Y)),
+    assert(clear(X)),
+    assert(handempty),
+    write('Stacked '), write(X), write(' on '), writeln(Y).
 
+goal_plan :-
+    pickup(b),
+    stack(b, c),
+    pickup(a),
+    stack(a, b).
+```
 
+### Output:
 
-
-
-
-### Input 
-
-### Output/Plan:
-
-
+![image](https://github.com/user-attachments/assets/b4e5748d-831c-42bf-96df-529e11f76fe8)
 
 ### Result:
 Thus the plan was found for the initial and goal state of block world problem.

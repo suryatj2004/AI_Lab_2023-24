@@ -11,6 +11,7 @@ Step 2: Preprocess the data:
   Parse DateTime column to extract features: hour, day, month, year.
   Handle missing values.
   Filter data for a specific junction.
+  
 Step 3: Normalize the traffic volume using MinMaxScaler.
 
 Step 4: Perform Exploratory Data Analysis (EDA):

@@ -6,32 +6,42 @@ To write a program to train the classifier for Traffic Flow Forecasting Using LS
 ###  Algorithm:
 
 Step 1: Collect traffic volume data from various road junctions.
+
 Step 2: Preprocess the data:
   Parse DateTime column to extract features: hour, day, month, year.
   Handle missing values.
   Filter data for a specific junction.
 Step 3: Normalize the traffic volume using MinMaxScaler.
+
 Step 4: Perform Exploratory Data Analysis (EDA):
   Plot traffic trends by hour, day, and month.
   Identify seasonal and temporal patterns.
+  
 Step 5: Prepare the dataset for LSTM:
   Use a sliding window with a look-back period (e.g., 24 hours).
   Create input-output pairs for supervised learning.
+  
 Step 6: Split the data into training (80%) and testing (20%) sets.
+
 Step 7: Build the LSTM model:
   Stack two LSTM layers.
   Add dense output layer.
   Compile the model using mean squared error loss and Adam optimizer.
+  
 Step 8: Train the model:
   Use a small batch size (e.g., 1).
   Train for a few epochs (e.g., 3).
+  
 Step 9: Predict traffic volume on both training and testing sets.
+
 Step 10: Evaluate model performance using metrics:
   MSE (Mean Squared Error)
   MAE (Mean Absolute Error)
   R² Score
   MAPE (Mean Absolute Percentage Error)
+  
 Step 11: Compare predictions with a baseline (persistence model).
+
 Step 12: Visualize actual vs. predicted traffic volume.
 
 ### Program:

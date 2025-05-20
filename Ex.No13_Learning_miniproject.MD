@@ -237,8 +237,6 @@ print(f'Test MAPE: {test_mape}')
 
 ### Output:
 
-
-
-
+![Screenshot 2025-05-19 085825](https://github.com/user-attachments/assets/d6f52612-63a1-4f60-b184-29d125ccb411)
 ### Result:
 Thus the system was trained successfully and the prediction was carried out.

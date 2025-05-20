@@ -237,6 +237,15 @@ print(f'Test MAPE: {test_mape}')
 
 ### Output:
 
-![Screenshot 2025-05-19 085825](https://github.com/user-attachments/assets/d6f52612-63a1-4f60-b184-29d125ccb411)
+![1](https://github.com/user-attachments/assets/2a7937eb-39b7-49a4-b9af-21c5e777e67b)
+
+![2](https://github.com/user-attachments/assets/8d9267c8-7768-4878-aa0e-5a8f4263f9f4)
+
+![3](https://github.com/user-attachments/assets/6e4d002d-e29a-4402-9fb2-db2ece0e6088)
+
+![4](https://github.com/user-attachments/assets/6b0b7fae-0cec-403e-87a8-c71e2144a99d)
+
+![5](https://github.com/user-attachments/assets/e0549022-3883-4b8a-b7fd-1ac0978d4857)
+
 ### Result:
 Thus the system was trained successfully and the prediction was carried out.
